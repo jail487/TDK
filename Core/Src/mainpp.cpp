@@ -7,13 +7,14 @@
 #include "mainpp.h"
 #include "PathSensor.h"
 #include "communication.h"
+#include "servo.h"
 #include "stdlib.h"
 #include "string.h"
 #include "stm32g4xx_hal.h"
 
 extern UART_HandleTypeDef huart1;
 extern TIM_HandleTypeDef htim6;
-
+bool state[];
 float sp[2];
 int tx = 0, rx = 0, timer;
 float speed1, speed2;
@@ -59,6 +60,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*htim){
 
 		timer++;
 		UART_Transmit_Two_Floats_DMA(&huart1,sp[0],sp[1]);
+		blockState(state[0],state[1],state[2],state[3],state[4],state[5]);
 
 	}
 }
