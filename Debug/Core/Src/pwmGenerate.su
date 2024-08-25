@@ -1,0 +1,2 @@
+../Core/Src/pwmGenerate.cpp:15:6:void pwm()	8	static
+../Core/Src/pwmGenerate.cpp:20:6:void MotorControl()	8	static

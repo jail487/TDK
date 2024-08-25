@@ -1,0 +1,4 @@
+../Core/Src/mainpp.cpp:22:6:void main_function()	8	static
+../Core/Src/mainpp.cpp:36:6:void HAL_UART_TxCpltCallback(UART_HandleTypeDef*)	16	static
+../Core/Src/mainpp.cpp:43:6:void HAL_UART_RxCpltCallback(UART_HandleTypeDef*)	16	static
+../Core/Src/mainpp.cpp:56:6:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	16	static

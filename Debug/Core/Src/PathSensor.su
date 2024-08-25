@@ -1,0 +1,2 @@
+../Core/Src/PathSensor.cpp:33:6:void path_setup()	8	static
+../Core/Src/PathSensor.cpp:38:6:void path(float*)	32	static
