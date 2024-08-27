@@ -22,7 +22,7 @@ typedef struct {
 void servo_move(servo*servo,float goalAngle,int responseTime);
 void servo_run(servo*servo ,int updateFreq);
 void blockState(bool state_a,bool state_b,bool state_c,bool state_d,bool state_e,bool state_f);
-
+void servo_setup();
 
 
 #endif /* INC_SERVO_H_ */

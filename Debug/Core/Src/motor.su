@@ -1,0 +1,6 @@
+../Core/Src/motor.cpp:37:6:void DCmotor_setup()	8	static
+../Core/Src/motor.cpp:71:6:void PI_control_run(PID_controller*, float, float)	40	static
+../Core/Src/motor.cpp:97:6:void getSpeed(TIM_HandleTypeDef*, float*, float)	32	static
+../Core/Src/motor.cpp:104:6:void DCmotor_run()	8	static
+../Core/Src/motor.cpp:128:2:void __static_initialization_and_destruction_0(int, int)	16	static
+../Core/Src/motor.cpp:128:2:cpp)	8	static

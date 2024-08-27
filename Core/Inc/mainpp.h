@@ -13,6 +13,7 @@ extern "C"{
 #endif
 
 void main_function();
+void setup();
 
 #ifdef __cplusplus
 }

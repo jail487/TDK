@@ -6,18 +6,25 @@
  */
 #include "servo.h"
 extern TIM_HandleTypeDef htim15;
-extern TIM_HandleTypeDef htim4;
+extern TIM_HandleTypeDef htim3;
 int goalAngle,t;
 int responseTime = 1000;
 //F front, B back, R right, M middle, L left
-servo servo_a{0,0,0,2000,true, &htim4, TIM_CHANNEL_1 };//FR
-servo servo_b{0,0,0,2000,true, &htim4, TIM_CHANNEL_2 };//FM
-servo servo_c{0,0,0,2000,true, &htim4, TIM_CHANNEL_3 };//FL
-servo servo_d{0,0,0,2000,true, &htim4, TIM_CHANNEL_4 };//BR
+servo servo_a{0,0,0,2000,true, &htim3, TIM_CHANNEL_1 };//FR
+servo servo_b{0,0,0,2000,true, &htim3, TIM_CHANNEL_2 };//FM
+servo servo_c{0,0,0,2000,true, &htim3, TIM_CHANNEL_3 };//FL
+servo servo_d{0,0,0,2000,true, &htim3, TIM_CHANNEL_4 };//BR
 servo servo_e{0,0,0,2000,true, &htim15, TIM_CHANNEL_1 };//BM
 servo servo_f{0,0,0,2000,true, &htim15, TIM_CHANNEL_2 };//BL
-//servo servo_a{0,0,0,2000,true, &htim4, TIM_CHANNEL_1 };
-
+//servo servo_a{0,0,0,2000,true, &htim3, TIM_CHANNEL_1 };
+void servo_setup(){
+	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
+	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_4);
+	//HAL_TIM_PWM_Start(&htim15, TIM_CHANNEL_1);
+	//HAL_TIM_PWM_Start(&htim15, TIM_CHANNEL_2);
+}
 void servo_move(servo*servo,float goalAngle,int responseTime){
 	servo -> goalAngle = goalAngle;
 	servo -> responseTime = responseTime;

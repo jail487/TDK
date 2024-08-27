@@ -14,8 +14,11 @@ C_SRCS += \
 
 CPP_SRCS += \
 ../Core/Src/PathSensor.cpp \
+../Core/Src/UART_servo.cpp \
 ../Core/Src/communication.cpp \
-../Core/Src/mainpp.cpp 
+../Core/Src/mainpp.cpp \
+../Core/Src/motor.cpp \
+../Core/Src/servo.cpp 
 
 C_DEPS += \
 ./Core/Src/main.d \
@@ -27,9 +30,12 @@ C_DEPS += \
 
 OBJS += \
 ./Core/Src/PathSensor.o \
+./Core/Src/UART_servo.o \
 ./Core/Src/communication.o \
 ./Core/Src/main.o \
 ./Core/Src/mainpp.o \
+./Core/Src/motor.o \
+./Core/Src/servo.o \
 ./Core/Src/stm32g4xx_hal_msp.o \
 ./Core/Src/stm32g4xx_it.o \
 ./Core/Src/syscalls.o \
@@ -38,8 +44,11 @@ OBJS += \
 
 CPP_DEPS += \
 ./Core/Src/PathSensor.d \
+./Core/Src/UART_servo.d \
 ./Core/Src/communication.d \
-./Core/Src/mainpp.d 
+./Core/Src/mainpp.d \
+./Core/Src/motor.d \
+./Core/Src/servo.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -51,7 +60,7 @@ Core/Src/%.o Core/Src/%.su: ../Core/Src/%.c Core/Src/subdir.mk
 clean: clean-Core-2f-Src
 
 clean-Core-2f-Src:
-	-$(RM) ./Core/Src/PathSensor.d ./Core/Src/PathSensor.o ./Core/Src/PathSensor.su ./Core/Src/communication.d ./Core/Src/communication.o ./Core/Src/communication.su ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/mainpp.d ./Core/Src/mainpp.o ./Core/Src/mainpp.su ./Core/Src/stm32g4xx_hal_msp.d ./Core/Src/stm32g4xx_hal_msp.o ./Core/Src/stm32g4xx_hal_msp.su ./Core/Src/stm32g4xx_it.d ./Core/Src/stm32g4xx_it.o ./Core/Src/stm32g4xx_it.su ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32g4xx.d ./Core/Src/system_stm32g4xx.o ./Core/Src/system_stm32g4xx.su
+	-$(RM) ./Core/Src/PathSensor.d ./Core/Src/PathSensor.o ./Core/Src/PathSensor.su ./Core/Src/UART_servo.d ./Core/Src/UART_servo.o ./Core/Src/UART_servo.su ./Core/Src/communication.d ./Core/Src/communication.o ./Core/Src/communication.su ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/mainpp.d ./Core/Src/mainpp.o ./Core/Src/mainpp.su ./Core/Src/motor.d ./Core/Src/motor.o ./Core/Src/motor.su ./Core/Src/servo.d ./Core/Src/servo.o ./Core/Src/servo.su ./Core/Src/stm32g4xx_hal_msp.d ./Core/Src/stm32g4xx_hal_msp.o ./Core/Src/stm32g4xx_hal_msp.su ./Core/Src/stm32g4xx_it.d ./Core/Src/stm32g4xx_it.o ./Core/Src/stm32g4xx_it.su ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32g4xx.d ./Core/Src/system_stm32g4xx.o ./Core/Src/system_stm32g4xx.su
 
 .PHONY: clean-Core-2f-Src
 
