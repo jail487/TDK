@@ -64,7 +64,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*htim){
 		//timer++;
 		//UART_Transmit_Two_Floats_DMA(&huart5,sp[0],sp[1]);
 		blockState(state[0],state[1],state[2],state[3],state[4],state[5]);/////git add
-		DCmotor_run();
+		DCmotor_run();//////////
 		//arm_run();
 
 	}

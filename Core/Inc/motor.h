@@ -14,21 +14,26 @@ typedef struct {
     float ki;
     float integral;
     float span;
+    float setpoint;
     int arr;
-    GPIO_TypeDef* gpioPort;
+    GPIO_TypeDef *gpioPort;
     uint16_t gpioPin;
     TIM_HandleTypeDef *htim;
     uint32_t TIM_CHANNEL;
 } PID_controller;
 typedef struct {
-	PID_controller* motor;
+	PID_controller *motor;
 	TIM_HandleTypeDef *htim;//encoder_timer
+	float speed;
+	float currentHeight;
+	float goalHeight;
+	float reduction_ratio;
 } DC_motor;
 void DCmotor_setup();
-void test();
-void getSpeed(TIM_HandleTypeDef *htim,float *speed,float reduction_ratio);
-void PI_control_run(PID_controller* motor, float sp, float speed);
+void getState(DC_motor *lifter,int sign);
+void PI_control_run(PID_controller *motor,DC_motor *lifter );
 void DCmotor_run();
+void set_goalHeight(PID_controller *motor, DC_motor *lifter,float height_setpoint);
 
 
 #endif /* INC_ENCODER_H_ */
